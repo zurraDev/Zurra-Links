@@ -16,7 +16,7 @@
             background-color: #000;
         }
 
-        /* VIDEO BACKGROUND - DIPAKSA PALING BELAKANG */
+        /* VIDEO BACKGROUND */
         #video-container {
             position: fixed;
             top: 0;
@@ -78,7 +78,7 @@
             z-index: 1;
         }
 
-        /* HEADER & LOGO */
+        /* LOGO */
         .store-logo {
             width: 90px;
             height: 90px;
@@ -114,7 +114,7 @@
             20%, 24%, 55% { opacity: 0.8; }
         }
 
-        /* LINK BUTTONS */
+        /* LINK ITEMS */
         .link-item {
             background-color: rgba(0, 0, 0, 0.8);
             border: 1px solid rgba(255, 255, 255, 0.4);
@@ -154,7 +154,6 @@
             text-shadow: 0 0 10px rgba(0, 170, 255, 0.8);
         }
 
-        /* PERINGATAN CLONE */
         .warning-text {
             font-size: 14px;
             color: #ffffff;
@@ -169,7 +168,6 @@
             text-transform: uppercase;
         }
 
-        /* HAK CIPTA */
         .copyright {
             font-size: 12px;
             color: rgba(255, 255, 255, 0.5);
@@ -184,17 +182,14 @@
 
     <div id="video-container">
         <video autoplay muted loop playsinline id="bg-video">
-            <source src="https://zurra-links.pages.dev/video.mp4" type="video/mp4">
+            <source src="https://file.garden/aWj-GYuIrzGCQk-t/video.mp4" type="video/mp4">
             <source src="video.mp4" type="video/mp4">
         </video>
     </div>
     
     <div class="overlay"></div>
 
-    <audio id="myAudio" loop>
-        <source src="https://zurra-links.pages.dev/lagu.mp3" type="audio/mpeg">
-        <source src="lagu.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="myAudio" loop><source src="lagu.mp3" type="audio/mpeg"></audio>
 
     <div class="music-control" onclick="toggleMusic()">
         <span id="music-icon">🎵</span> <span id="music-text">MUSIC OFF</span>
@@ -267,17 +262,9 @@
             <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"></div>
             <div class="link-title">TELEGRAM OWNER</div>
         </a>
-        <a href="https://t.me/Xnxzurra" class="link-item" style="border-color: #0088cc;" target="_blank">
-            <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"></div>
-            <div class="link-title">CHANNEL TELEGRAM OWNER</div>
-        </a>
-        <a href="https://t.me/gbterbuka" class="link-item" style="border-color: #0088cc;" target="_blank">
-            <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"></div>
-            <div class="link-title">GB JUAL BELI ALL PRODUK ZURRA</div>
-        </a>
 
         <div class="warning-text">
-            "Silahkan SV Kontak dan ikuti sosmed owner Zurra supaya terhindar dari yang namanya clone"
+            "Silahkan SV Kontak Zurra supaya terhindar dari yang namanya clone"
         </div>
 
         <div class="copyright">© Zurra Store 2026</div>
@@ -286,11 +273,6 @@
     <script>
         var audio = document.getElementById("myAudio");
         var vid = document.getElementById("bg-video");
-
-        // Paksa Play saat halaman di-klik pertama kali (Aturan Browser)
-        document.body.addEventListener('click', function() {
-            vid.play();
-        }, { once: true });
 
         function toggleMusic() {
             if (audio.paused) {
@@ -304,7 +286,15 @@
                 document.getElementById("music-icon").innerHTML = "🎵";
             }
         }
+
+        // Pancingan agar video langsung jalan saat user menyentuh layar pertama kali
+        document.body.addEventListener('touchstart', function() {
+            vid.play();
+        }, { once: true });
+        document.body.addEventListener('click', function() {
+            vid.play();
+        }, { once: true });
     </script>
 </body>
-                </html>
-                                  
+    </html>
+                                                                                                          
